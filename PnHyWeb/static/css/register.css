@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../image/re.jpg);
+    background-size: cover;
+    background-position: 100%;
+}
+
+.register-container {
+    max-width: 500px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+.form-container {
+    max-width: 500px;
+    width: 90%;
+    padding: 30px;
+    border-radius: 15px;
+    background: white;
+    position: relative;
+}
+
+.form-container h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.form-container form {
+    font-size: 20px;
+}
+
+.form-container form button{
+    margin: 15px 0px;
+}
+
+.form-group {
+    height: max-content;
+}
+
+.form-group label {
+    font-size: 20px;
+}
+
+.form-control {
+    height: 30px;
+}
+
+p {
+    font-size: 14px;
+}
+
+.eye {
+    display: none;
+    z-index: 999;
+    position: absolute;
+    top: 61.75%;
+    left: 87%;
+    cursor: pointer;
+}
+
+.confirm {
+    top: 72%;
+}
+
+
+.show-password {
+    display: flex;
+}
+
+.error_message {
+    display: none;
+    padding: 5px;
+    align-items: center;
+    max-width: 500px;
+    width: 90%;
+    height: max-content;
+    background-color: rgb(255, 93, 93);
+    border-radius: 15px;
+    margin: 5px 0px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .form-container {
+        max-width: 450px;
+        width: 90%;
+    }
+
+    .form-group label {
+        font-size: 18px;
+    }
+
+    .form-container h1 {
+        font-size: 36px;
+    }
+
+    .error_message {
+        max-width: 450px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 425px) {
+    .form-container {
+        max-width: 400px;
+        margin: 0px 15px 15px;
+        padding: 25px;
+    }
+
+    .form-group label {
+        font-size: 16px;
+    }
+
+    .form-group {
+        height: 55px;
+    }
+
+    .form-container h1 {
+        font-size: 34px;
+    }
+
+    .form-control {
+        height: 25px;
+    }
+
+    .btn-submit {
+        max-height: 35px;
+        font-size: 16px;
+    }
+
+    .error_message {
+        max-width: 400px;
+        font-size: 18px;
+        margin: 5px 0px;
+    }
+
+    .eye {
+        top: 61.5%;
+    }
+
+    .confirm {
+        top: 71.75%;
+    }
+}
+
+@media (max-width: 425px) and (min-width: 375px) {
+    .form-container {
+        max-width: 350px;
+        width: 90%;
+        margin: 0px 10px 10px;
+        padding: 25px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group {
+        height: 50px;
+    }
+
+    .form-container h1 {
+        font-size: 30px;
+        margin-bottom: 2px;
+    }
+
+    .form-control {
+        height: 25px;
+        font-size: 14px;
+    }
+
+    .btn-submit {
+        max-height: 30px;
+        font-size: 14px;
+    }
+
+    .error_message {
+        max-width: 350px;
+        font-size: 16px;
+        margin: 10px;
+    }
+
+    .eye {
+        top: 61.5%;
+        left: 85.5%;
+    }
+
+    .confirm {
+        top: 71.75%;
+    }
+}
+
+@media (max-width: 412px) and (min-width: 375px) {
+    .eye {
+        top: 59%;
+        left: 84.5%;
+    }
+
+    .confirm {
+        top: 68.75%;
+    }
+}
+
+
+@media (max-width: 375px) and (min-width: 320px) {
+    .form-container {
+        max-width: 350px;
+        width: 90%;
+        margin: 5px;
+        padding: 20px;
+    }
+
+    .form-container p {
+        font-size: 12px;
+    }
+
+    .form-group {
+        height: 45px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+    }
+
+    .form-container h1 {
+        font-size: 28px;
+        margin-bottom: 1px;
+    }
+
+    .form-control {
+        height: 25px;
+        font-size: 14px;
+    }
+
+    .btn-submit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 30px;
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .error_message {
+        max-width: 350px;
+        font-size: 14px;
+        margin: 5px;
+    }
+
+    .eye {
+        width: 16px;
+        height: 16px;
+        top: 61.5%;
+        left: 85.5%;
+    }
+
+    .confirm {
+        width: 16px;
+        height: 16px;
+        top: 71.5%;
+    }
+}
+
+@media (max-width: 350px) and (min-width: 320px) {
+    .eye {
+        top: 59%;
+        left: 85%;
+    }
+
+    .confirm {
+        top: 69%;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .form-container {
+        max-width: 350px;
+        width: 90%;
+        margin: 5px;
+        padding: 15px;
+    }
+
+    .form-container p {
+        font-size: 10px;
+    }
+
+    .form-group {
+        height: 40px;
+    }
+
+    .form-group label {
+        font-size: 10px;
+    }
+
+    .form-container h1 {
+        font-size: 24px;
+        margin-bottom: 1px;
+    }
+
+    .form-control {
+        height: 20px;
+        font-size: 10px;
+    }
+
+    .btn-submit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 25px;
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .error_message {
+        max-width: 350px;
+        font-size: 10px;
+        margin: 5px;
+    }
+
+    .eye {
+        width: 14px;
+        height: 14px;
+        top: 59.25%;
+        left: 84%;
+    }
+
+    .confirm {
+        width: 14px;
+        height: 14px;
+        top: 69.25%;
+    }
+}

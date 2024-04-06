@@ -1,0 +1,530 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>Unit3</title>
+{% endblock %}
+
+{% block content %}
+
+
+<body>
+    <div class="unit-big-container">
+        <section class="teams">
+            <div class="unit-title-container unit-container">
+                <h3 class="unit-title">
+                    หน่วยที่ 3 อุปกรณ์ไฟฟ้าและสัญลักษณ์
+                </h3>
+                <p class="unit-details">
+                    ในระบบนิวเมติกส์ไฟฟ้า การควบคุมการทำงานของเครื่องจักรกลนั้นสามารถแบ่งไห้เป็น 2
+                    ส่วนด้วยกัน คือ ส่วนของวงจรกำลัง คือ ส่วนที่เป็นวงจรนิวเมติกส์ <br>
+                    โดยจะประกอบด้วย อุปกรณ์ทำงานประเภทต่าง ๆ ซึ่งควบคุมการเคลื่อนที่ด้วยโซลินอยด์วาล์ว
+                    และอีกส่วนหนึ่งก็คือ วงจรควบคุมหรือส่วนที่เป็นวงจรไฟฟ้า <br>
+                    โดยจะใช้อุปกรณ์ไฟฟ้าประเภทต่าง ๆ เช่น สวิตช์ รีเลย์ ตัวตั้งเวลา และตัวนับ
+                    เป็นอุปกรณ์ที่ให้สัญญาณทางไฟฟ้า เพื่อควบคุมการทำงานหรือเปลี่ยนตำแหน่ง <br>
+                    ของโซลินอยด์วาล์วในส่วนที่เป็นวงจรนิวเมติกส์อีกทีหนึ่ง
+                </p>
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h4 class="unit-sub-title">
+                    อุปกรณ์ไฟฟ้าที่ใช้ในการควบคุมในวงจรไฟฟ้า
+                </h4>
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h5 class="unit-sub-title-1">
+                    1. สวิตช์แบบใช้มือกด (Pushbutton switch)
+                </h5>
+                <p class="unit-details">
+                    สวิตช์แบบใช้มือกด (Pushbutton switch) เป็นการกดให้หน้าคอนแทคของขั้วไฟฟ้าต่อ (NO)
+                    หรือตัด (NC) และกลับสู่สภาพเดิมเมื่อปล่อยมือด้วยแรงสปริง
+                </p>
+                <table class="unit-table">
+                    <tr>
+                        <th class="unit-3-table-head"></th>
+                        <th class="unit-3-table-head">
+                            โครงสร้าง
+                        </th>
+                        <th class="unit-3-table-head">
+                            สัญลักษณ์
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="unit-details">สวิตช์กดแบบปกติเปิด (NO. ; NORMALLY OPEN)</p>
+                        </td>
+                        <td>
+                            <img class="w350h200" src="{% static 'image/ปกติเปิด.png ' %}" alt="Not Found">
+                        </td>
+                        <td>
+                            <img class="w80h80" src="{% static 'image/สัญNO.png' %}" alt="Not Found">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="unit-details">สวิตช์กดแบบปกติปิด (NC. ; NORMALLY CLOSE)</p>
+                        </td>
+                        <td>
+                            <img class="w350h200" src="{% static 'image/ปกติปิด.png ' %}" alt="Not Found">
+                        </td>
+                        <td><img class="w80h80" src="{% static 'image/สัญNC.png' %}" alt="Not Found">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="unit-sub-container unit-container">
+                <h5 class="unit-sub-title-1">
+                    2. สวิตช์กดค้างตำแหน่ง (Toggle Switch)
+                </h5>
+                <p class="unit-details">
+                    สวิตช์กดค้างตำแหน่ง เป็นสวิตช์ที่กดค้างตำแหน่งได้
+                </p>
+
+                <table class="unit-table">
+                    <tr>
+                        <th class="unit-3-table-head">
+                            โครงสร้าง
+                        </th>
+                        <th class="unit-3-table-head">
+                            สัญลักษณ์
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="w350h175" src="{% static 'image/สวิตช์ค้างตำแหน่ง.png' %} " alt="Not Found">
+                        </td>
+                        <td>
+                            <img class="w80h80" src="{% static 'image/สัญค้าง.png' %}" alt="Not Found">
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h5 class="unit-sub-title-1">
+                    3. ลิมิตสวิตช์ (Limit switch)
+                </h5>
+                <p class="unit-details">
+                    ลิมิตสวิตช์ (Limit Switch) เป็นสวิตช์ที่ใช้กลไกในการกด เช่น แท่นเครื่อง ก้านสูบ
+                    หรือฝาปิดเครื่อง เป็นต้น โดยมีหลักการทำงานเหมือนกับสวิตช์ไฟฟ้าทั่วไป
+                </p>
+                <table class="unit-table">
+                    <tr>
+                        <th class="unit-3-table-head">
+                            โครงสร้าง
+                        </th>
+                        <th class="unit-3-table-head">
+                            สัญลักษณ์
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="w260h210" src="{% static 'image/อุปกรณ์ลิมิต.png' %} " alt="Not Found">
+                        </td>
+                        <td>
+                            <img class="w80h80" src="{% static 'image/ลิมิต.png' %}" alt="Not Found">
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h5 class="unit-sub-title-1">
+                    4. รีเลย์ (Relay)
+                </h5>
+                <p class="unit-details">
+                    รีเลย์ (Relay) ในวงจรนิวเมติกส์ไฟฟ้าไม่สามารถใช้สวิตช์เพียงอย่างเดียวในการควบคุมได้
+                    ดังนั้นจึงนำรีเลย์เข้ามาช่วยควบคุมวงจรไฟฟ้าที่ยุ่งยาก และไม่สามารถใช้สวิตช์เพียงอย่างเดียวได้
+                    <br>
+                    ซึ่งภายในตัวรีเลย์มีคอนแทค จำนวนหลายชุดอยู่ภายใน
+                    ซึ่งทำงานได้โดยอาศัยอำนาจแม่เหล็กไฟฟ้าช่วยให้เกิดการตัดต่อวงรควบคุม
+
+                </p>
+
+                <table class="unit-table">
+                    <tr>
+                        <th class="unit-3-table-head">
+                            โครงสร้าง
+                        </th>
+                        <th class="unit-3-table-head">
+                            สัญลักษณ์
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="w350h200" src="{% static 'image/รีเลย์.png' %} " alt="Not Found">
+                        </td>
+                        <td>
+                            <img class="w80h80" src="{% static 'image/สัญรีเลย์.png' %}" alt="Not Found">
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h5 class="unit-sub-title-1">
+                    5. รีเลย์ตั้งเวลา (Time Relay)
+                </h5>
+                <p class="unit-details">
+
+                    รีเลย์ตั้งเวลาทำหน้าที่เหมือนเป็นสวิตช์ที่ทำงานโดยอาศัยการหน่วงเวลาด้วยระบบอิเล็คทรอนิคส์ หรือ
+                    มอเตอร์ไฟฟ้าขนาดเล็ก รีเลย์ตั้งเวลามีหลายแบบ <br>
+                    แต่แบบที่นิยมใช้กันอย่างแพร่หลาย มี 2 ชนิดด้วยกัน คือ แบบหน่วงเวลาในขณะที่มีสัญญาณ (On Delay)
+                    และแบบหน่วงเวลาตอนตัดสัญญาณ (Off Delay)
+                </p>
+
+                <table class="unit-table">
+                    <tr>
+                        <th class="unit-3-table-head">
+                            5.1 แบบหน่วงเวลาในขณะที่มีสัญญาณ (On Delay)
+
+                        </th>
+                        <th class="unit-3-table-head">
+                            หลักการทำงาน
+                        </th>
+                        <th class="unit-3-table-head">
+                            สัญลักษณ์
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            รีเลย์ตั้งเวลาแบบนี้จะเริ่มนับเวลาของการหน่วงเมื่อมีสัญญาณไฟเข้าที่ขดลวดรีเลย์
+                            พอถึงเวลาที่ตั้งไว้หน้าสัมผัสจะเปลี่ยนตำแหน่ง
+                            และเมื่อตัดสัญญาณไฟที่ขดลวดหน้าสัมผัสก็จะกลับสู่สภาพเดิม
+                        </td>
+                        <td>
+                            ในสภาวะปกติหน้าคอนแทค 15 จะต่อกับคอนแทค 16 เมื่อกด S1 กระแสไฟไหลผ่านรีเลย์ KT
+                            จะทำให้รีเลย์ตั้งเวลาทำงานและเริ่มนับเวลาจนถึงเวลาที่ตั้งไว้ จะทำให้หน้าคอนแทค 15
+                            จะต่อกับคอนแทค 18 ทันที <br>
+                            และเมื่อตัดวงจรหน้าคอนแทคจะกลับสู่สภาพเดิม
+                        </td>
+                        <td>
+                            <img class="w250h200" src="{% static 'image/On delay.png' %}" alt="" width="250"
+                                height="200">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="unit-3-table-head">
+
+                            5.2 แบบหน่วงเวลาตอนตัดสัญญาณ (Off Delay)
+
+                        </th>
+                        <th class="unit-3-table-head">
+                            หลักการทำงาน
+                        </th>
+                        <th class="unit-3-table-head">
+                            สัญลักษณ์
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            รีเลย์ตั้งเวลาแบบนี้จะเริ่มนับเวลาของการหน่วงเมื่อมีการตัดสัญญาณไฟที่มาเลี้ยงขดลวดของรีเลย์
+
+                        </td>
+                        <td>
+                            ในสภาวะปกติหน้าคอนแทค 15 จะต่อกับคอนแทค 16 เมื่อกด S1 กระแสไฟไหลผ่านรีเลย์ KT
+                            จะทำให้รีเลย์ตั้งเวลาทำงานทำให้หน้าคอนแทค 15 จะต่อกับคอนแทค 18 ทันที
+                            และเมื่อตัดกระแสไฟที่จ่ายให้รีเลย์ตั้งเวลา <br>
+                            รีเลย์ตั้งเวลาจะเริ่มนับจนถึงเวลาที่กำหนดไว้หน้าคอนแทคจึงจะกลับสู่สภาพเดิม
+                        </td>
+                        <td>
+                            <img class="w250h200" src="{% static 'image/Off delay.png' %}" alt="Not Found">
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h5 class="unit-sub-title-1">
+                    6. ตัวนับ (Counter)
+                </h5>
+
+
+                <table class="unit-table">
+                    <tr>
+                        <th class="unit-3-table-head"></th>
+                        <th class="unit-3-table-head">
+                            สัญลักษณ์
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            ตัวนับเป็นอุปกรณ์ที่ทำงานโดยอาศัยสัญญาณพัลส์ (Pulse)
+                            หรือสัญญาณที่เป็นแบบเปิด - ปิดทางไฟฟ้า เพื่อสั่งให้มีการนับเกิดขึ้น
+                            ตัวนับที่นิยมใช้กันอยู่มี 2 แบบ คือ แบบนับอย่างเดียว และแบบตั้งจำนวน
+                        </td>
+                        <td>
+                            <img class="w200h200" src="{% static 'image/ตัวนับ.png' %}" alt="Not Found">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h5 class="unit-sub-title-1">
+                    7. โซลินอยด์ (Soleonoid)
+                </h5>
+
+                <table class="unit-table">
+                    <tr>
+                        <th class="unit-3-table-head"></th>
+                        <th class="unit-3-table-head">
+                            โครงสร้าง
+                        </th>
+                        <th class="unit-3-table-head">
+                            สัญลักษณ์
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            ในการควบคุมอุปกรณ์ทำงานในระบบนิวเมติกส์ไฟฟ้าให้สามารถทำงานตามที่ต้องการได้นั้น
+                            จะต้องใช้วาล์วเป็นตัวควบคุมการทำงานหรือเปลี่ยนทิศทางลมเพื่อให้อุปกรณ์ทำงาน เช่น
+                            ลูกสูบ ฯล สามารถทำงานตามที่ต้องการได้ <br>
+                            ในการเปลี่ยนตำแหน่งวาล์วในระบบนิวเมติกส์ไฟฟ้าจะใช้โซลินอยด์ทำหน้าที่เป็นตัวเปลี่ยนตำแหน่งวาล์ว
+                            โดยหลักการทำงานของโซลินอยด์ คือ
+                            เมื่อมีกระแสไฟไหลผ่านขดลวดจะทำให้เกิดอำนาจแม่เหล็กดึงให้แกนเหล็ก (Armature)
+                            เกิดการเคลื่อนที่ <br>
+                            ผลจากการเคลื่อนที่นี้นำไปเป็นตัวบังคับทำให้วาล์วเกิดการเลื่อน หรือเปลี่ยนตำแหน่งได้
+
+                        </td>
+                        <td>
+                            <img class="w400h200 rotate-90" src="{% static 'image/โซลินอยด์.png' %}" alt="Not Found">
+                        </td>
+                        <td>
+                            <img class="w150h100" src="{% static 'image/สัญโซลินอยด์.png' %}" alt="Not Found">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h4 class="unit-sub-title">
+                    โครงสร้างและหลักการทำงานของโซลินอยด์วาล์ว
+                </h4>
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h5 class="unit-sub-title-1">
+                    1. วาล์ว 3/2 ปกติปิดเลื่อนด้วยโซลินอยด์กลับสู่สภาพเดิมด้วยสปริง
+                </h5>
+
+
+                <table class="unit-table">
+                    <tr>
+                        <th class="unit-3-table-head">
+                            หลักการทำงาน
+                        </th>
+                        <th class="unit-3-table-head">
+                            โครงสร้าง
+                        </th>
+                        <th class="unit-3-table-head">
+                            สัญลักษณ์
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            สภาวะปกติ : เมื่อยังไม่มีกระแสไฟไหลเข้าขดลวดโซลินอยค์ โซลินอยด์
+                            จึงไม่มีอำนาจแม่เหล็กแรงสปริงจะดันให้วาล์วปิดทางลมจาก P ไม่ให้ผ่านไป A <br>
+                            สภาวะทำงาน : เมื่อมีกระแสไฟไหลเข้าขดลวดโซลินอยด์
+                            จะทำให้โซลินอยด์เกิดอำนาจแม่เหล็กเลื่อนลิ้นของวาล์วให้เคลื่อนที่ขึ้นเปิดทางลมจาก P
+                            ต่อถึง A ได้ ส่วนรู R จะถูกปิด
+                        </td>
+                        <td>
+                            <img class="w400h200" src="{% static 'image/32 โซลินอยด์1.png' %}" alt="Not Found">
+                        </td>
+                        <td>
+                            <img class="w150h100" src="{% static 'image/สัญลักษณ์32โซลินอยด์.png' %}" alt="Not Found">
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h5 class="unit-sub-title-1">
+                    2. วาล์ว 5/2 ใช้โซลินอยด์และลมเป็นตัวเลื่อนวาล์ว กลับสู่สภาพเดิมด้วยสปริง
+                </h5>
+                <table class="unit-table">
+                    <tr>
+                        <th class="unit-3-table-head">
+                            หลักการทำงาน
+                        </th>
+                        <th class="unit-3-table-head">
+                            โครงสร้าง
+                        </th>
+                        <th class="unit-3-table-head">
+                            สัญลักษณ์
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            สภาวะปกติ : เมื่อไม่มีกระแสไฟไหลเข้าขดลวดโซลินอยด์
+                            โซลินอยด์จะไม่มีอำนาจแม่เหล็กแรงสปริงจะดันลิ้นเล็กปิดท่อสัญญาณลมควบคุมจาก P
+                            ไม่ให้ไหลผ่าน ดังนั้นลิ้นใหญ่จะยังไม่ถูกเลื่อน ลมจากรู P จะต่อถึงรู B และรู A
+                            ต่อถึงรู R<br>
+                            สภาวะทำงาน : เมื่อมีกระแสไฟไหลเข้าขดลวดโซลินอยด์ จะทำให้โซลินอยด์เกิดอำนาจแม่เหล็ก
+                            ทำให้ดึงลิ้นเล็กให้เปิดทางลม ลมจาก P
+                            จะไหลผ่านท่อสัญญาณลมควบคุมไปเลื่อนวาล์วให้เปลี่ยนตำแหน่ง ทำให้ลมจากรู P
+                            เปลี่ยนทิศทางไป A และรู B ต่อถึงรู S รู R จะถูกปิด
+                        </td>
+                        <td>
+                            <img class="w350h400" src="{% static 'image/52 กลับด้วยสปริง.png' %}" alt="Not Found">
+                        </td>
+                        <td>
+                            <img class="w150h100" src="{% static 'image/สัญลักษณ์52กลับด้วยสปริง.png' %}"
+                                alt="Not Found">
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h5 class="unit-sub-title-1">
+                    3. วาล์ว 5/2 ใช้โซลินอยด์และลมเป็นตัวเลื่อนวาล์วทั้งสองด้าน
+                </h5>
+
+                <table class="unit-table">
+                    <tr>
+                        <th class="unit-3-table-head">
+                            หลักการทำงาน
+                        </th>
+                        <th class="unit-3-table-head">
+                            โครงสร้าง
+                        </th>
+                        <th class="unit-3-table-head">
+                            สัญลักษณ์
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            สภาวะปกติ : เมื่อมีกระแสไฟไหลเข้าขดลวดโซลินอยด์ด้านซ้ายมือ
+                            จะทำให้เกิดอำนาจแม่เหล็กเลื่อนลิ้นเล็กด้านซ้ายมือให้เปิดทางลม ลมจาก P
+                            จะไหลผ่านท่อสัญญาณไปเลื่อนลิ้นของเมนวาล์วให้เลื่อนไปทางขวามือ ทำให้แรงดันลมจากรู P
+                            ต่อถึง A และ B ต่อถึงรู S รู R จะถูกปิดR<br>
+                            สภาวะทำงาน : เมื่อมีกระแสไฟไหลเข้าขดลวดโซลินอยด์ด้านขวามือ
+                            จะทำให้เกิดอำนาจแม่เหล็กเลื่อนลิ้นเล็กด้านขวามือให้เปิดทางลม ลมจาก P
+                            จะไหลผ่านท่อสัญญาณไปเลื่อนลิ้นของเมนวาล์วให้เลื่อนไปทางขวาซ้าย ทำให้แรงดันลมจากรู P
+                            ต่อถึง B และ A ต่อถึงรู R รู S จะถูกปิด
+                        </td>
+                        <td>
+                            <img class="w400h200" src="{% static 'image/52 เลื่อนด้วยวาล์วสองด้าน.png' %}"
+                                alt="Not Found">
+                        </td>
+                        <td>
+                            <img class="w150h100" src="{% static 'image/สัญลักษณ์52เลื่อนด้วยวาล์ว.png' %}"
+                                alt="Not Found">
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h4 class="unit-sub-title">
+                    วงจรนิวเมติกส์ไฟฟ้าพื้นฐาน
+                </h4>
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h5 class="unit-sub-title-1">
+                    1. การควบคุมการทำงานค้างตำแหน่ง
+                </h5>
+
+
+                <table class="unit-table">
+                    <tr>
+                        <th class="unit-3-table-head">
+                            ตัวอย่างงาน
+                        </th>
+                        <td>
+
+                            อุปกรณ์เปลี่ยนทิศทางในการเปลี่ยนทิศทางเคลื่อนย้ายสิ่งของจากลูกกลิ้งลำเลียงรางหนึ่งไปอีกรางหนึ่ง
+                            เมื่อกดสวิตช์รางอุปกรณ์จะเคลื่อนที่ออก (ก้านสูบเคลื่อนที่ออก)
+                            และเมื่อกดสวิตช์อีกตัวหนึ่งรางอุปกรณ์จะเคลื่อนที่กลับสู่ตำแหน่งเดิม
+                            (ก้านสูบเคลื่อนที่เข้า)
+                        </td>
+                        <td>
+                            <img class="w350h175" src="{% static 'image/ทำงานค้างตำแหน่ง.png' %}" alt="Not Found">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="unit-3-table-head">
+                            วงจรการทำงาน
+                        </th>
+                        <td>
+                            เมื่อกดสวิตช์ค้างตำแหน่ง S1 จะมีกระแสไฟไหลผ่านขดลวดโซลินอยด์ Y1
+                            ทำให้เกิดอำนาจแม่เหล็กเอาชนะแรงสปริงเลื่อนเมนวาล์ว 5/2 และจะค้างตำแหน่ง
+                            ก้านสูบเคลื่อนที่ออก และเมื่อกดปลดล็อคสวิตช์ค้างตำแหน่ง S1 โซลินอยด์ Y1
+                            จะหมคสภาพการเป็นแม่เหล็ก
+                            สปริงจะเลื่อนเมนวาล์วให้กลับสู่สภาพเคิมทำให้ก้านสูบเคลื่อนที่เข้า
+                        </td>
+                        <td>
+                            <img class="w350h300" src="{% static 'image/วงทำงานค้างตำแหน่ง.jpg' %}" alt="Not Found">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h5 class="unit-sub-title-1">
+                    2. การควบคุมการทำงานด้วยลิมิตสวิตช์
+                </h5>
+
+                <table class="unit-table">
+                    <tr>
+                        <th class="unit-3-table-head">
+                            ตัวอย่างงาน
+                        </th>
+                        <td>
+                            เครื่องป้อนชิ้นงาน ในการเลื่อนแผ่นไม้ออกจากที่เก็บ
+                            จะใช้กระบอกสูบสองทางหนึ่งตัวโดยมีลักษณะการทำงานดังต่อไปนี้ คือ
+                            เมื่อกดสวิตช์สตาร์ทก้านสูบจะเคลื่อนที่ออกและกลับสู่ตำแหน่งเริ่มต้น
+                            โดยอัตโนมัติเมื่อไปชนกับลิมิตสวิตช์
+                        </td>
+                        <td>
+                            <img class="w350h175" src="{% static 'image/ตัวอย่างลิมิตสวิตซ์.png' %}" alt="Not Found">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="unit-3-table-head">
+                            วงจรการทำงาน
+                        </th>
+                        <td>
+                            เมื่อกดสวิตช์ S1 กระแสไฟจะไหลผ่านขดลวดโซลินอยด์ Y1 ทำให้เกิดอำนาจแม่เหล็ก
+                            เมนวาล์ว 5/2 จะถูกเลื่อนไปทางขวามือ ทำให้ก้านสูบเคลื่อนที่ออก
+                            และเมื่อก้านสูบเคลื่อนที่ออกจนสุดก้านสูบจะไปกดลิมิตสวิตช์ S2
+                            และต่อวงจรทำให้มีกระแสไฟไหลผ่านโซลินอยด์ Y2
+                            โซลินอยด์จะเกิดอำนาจแม่เหล็กเลื่อนเมนวาล์ว 5/2 ให้กลับสู่ตำแหน่งเดิม
+                            ทำให้ก้านสูบเคลื่อนที่เข้า ในขณะเดียวกันก็จะปล่อยให้ลิมิตสวิตช์ S2
+                            ให้กลับสู่สภาพเดิมด้วย
+                        </td>
+                        <td>
+                            <img class="w400h300" src="{% static 'image/วงจรการทำงานลิมิตสวิตซ์.jpg' %}"
+                                alt="Not Found">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <div class="unit-sub-container unit-container">
+            <div class="image-center">
+                <video class="unit-video unit-3" controls>
+                    <source src="{% static 'image/ไฟฟ้า.mp4' %}" type="video/mp4">
+                </video>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}

@@ -1,0 +1,380 @@
+* {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#background-video {
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: .4s;
+    text-align: center;
+    position: relative;
+}
+
+.nav-container:hover {
+    background-color: rgba(167, 167, 167, 0.521);
+    color: black;
+}
+
+.title-text {
+    margin: 5px 0;
+    height: max-content;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: .25rem;
+    text-align: center;
+}
+
+.nav-link {
+    height: max-content;
+    font-size: 24px;
+    text-align: center;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+}
+
+a:hover {
+    font-size: 28px;
+    color: black;
+}
+
+.welcome-container,
+.welcome-text {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    height: max-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-container {
+    height: calc(100vh - 100px);
+    width: 100vw;
+}
+
+.welcome-line-1 {
+    font-size: 40px;
+    font-weight: 700;
+    border: #272829;
+    color: #272829;
+    transition: .4s;
+    padding: 5px;
+    margin: 0 0 10px;
+}
+
+.welcome-line-2 {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(189, 189, 189, 0.63);
+
+}
+
+.welcome-login {
+    display: flex;
+    z-index: 999;
+}
+.welcome-register {
+    display: flex;
+    z-index: 999;
+}
+
+.profile-name,
+.welcome-line-2,
+.welcome-text-container,
+.welcome-name,
+.sign-out {
+    width: max-content;
+    height: max-content;
+    cursor: pointer;
+}
+
+.welcome-text-container:hover {
+    text-decoration: underline;
+}
+
+.welcome-name {
+    display: flex;
+    flex-direction: row;
+}
+
+.bi-person-fill {
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+    cursor: default;
+}
+
+.welcome-text {
+    flex-direction: row;
+}
+
+.welcome-center-text {
+    margin: 0 5px;
+    cursor: default;
+    text-decoration: none;
+}
+
+.menu-icon,
+.drawer-container {
+    display: none;
+}
+
+.drawer-container {
+    width: 90%;
+    background-color: white;
+    position: absolute;
+    z-index: 9999;
+    right: 0;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .title-text {
+        font-size: 36px;
+    }
+
+    .nav-link {
+        font-size: 20px;
+    }
+
+    a:hover {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 575px) {
+    .title-text {
+        font-size: 32px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+
+    a:hover {
+        font-size: 20px;
+    }
+
+    .welcome-line-1 {
+        font-size: 36px;
+    }
+
+    .welcome-line-2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 575px) and (min-width: 500px) {
+    .title-text {
+        font-size: 26px;
+    }
+
+    .welcome-line-1 {
+        font-size: 34px;
+    }
+
+
+}
+
+@media (max-width: 500px) and (min-width: 425px) {
+    .title-text {
+        font-size: 20px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    a:hover {
+        font-size: 18px;
+    }
+
+    .welcome-line-1 {
+        font-size: 32px;
+    }
+
+}
+
+@media (max-width: 425px) and (min-width: 320px) {
+    .welcome-line-2 {
+        display: none;
+    }
+
+    .welcome-line-1 {
+        font-size: 34px;
+        width: 300px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 425px) and (min-width: 375px) {
+    .title-text {
+        font-size: 28px;
+        text-align: start;
+    }
+
+    .nav-link {
+        display: none;
+    }
+
+    .nav-container {
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 375px) and (min-width: 320px) {
+    .title-text {
+        font-size: 22px;
+        text-align: start;
+    }
+
+    .nav-link {
+        display: none;
+    }
+
+    .nav-container {
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    .drawer-container {
+        max-width: 250px;
+        height: 120%;
+    }
+
+    .center-text {
+        margin: 0 2px;
+    }
+
+    .drawer-profile-text,
+    .drawer-link {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .drawer-profile {
+        display: flex;
+        height: 40px;
+        margin: 15px 0;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .profile-text,
+    .drawer-profile-text,
+    .profile-link,
+    .bi {
+        height: max-content;
+        width: max-content;
+    }
+
+    .profile-link:hover {
+        text-decoration: underline;
+    }
+
+    .line-2 {
+        display: flex;
+        flex-direction: row;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .bi,
+    .profile-link {
+        cursor: pointer;
+    }
+
+    .drawer-link {
+        width: 100%;
+        justify-content: center;
+        height: max-content;
+    }
+
+    .drawer-homepage,
+    .drawer-unit,
+    .drawer-activity,
+    .drawer-test,
+    .drawer-signup {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 65px;
+        padding: 10px;
+        cursor: pointer;
+        margin: 5px 0;
+    }
+
+    .drawer-homepage:hover,
+    .drawer-unit:hover,
+    .drawer-activity:hover,
+    .drawer-test:hover,
+    .drawer-signup:hover {
+        background-color: rgba(128, 128, 128, 0.342);
+    }
+
+    .drawer-test .test-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .drawer-link-icon {
+        margin-right: 10px;
+    }
+
+}
+
+@keyframes SlideIn {
+    0% {
+        right: -28%;
+    }
+
+    100% {
+        right: 0%;
+    }
+}

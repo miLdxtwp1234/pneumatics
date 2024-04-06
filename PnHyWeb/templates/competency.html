@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>competency</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="competency-header-info">
+    <div class="competency-capacity">
+        สมรรถนะ
+    </div>
+    <div class="competency-capacity-details">
+        1. ผู้เรียนสามารถระบุสัญลักษณ์และชื่อชิ้นส่วนของอุปกรณ์นิวเมติกส์และได้<br>
+        2. ผู้เรียนสามารถอธิบายการทำงานของวงจรนิวเมติกส์จากแผนภาพไดอะแกรมได้
+    </div>
+</div>
+
+<div class="competency-unit">
+    <div class="competency-unit-1 competency-container-unit competency-activate" id="competency-unit-1">
+        <h3 class="competency-title">หน่วยที่ 1 อุปกรณ์นิวเมติกส์</h3>
+        <img class="competency-unit-image unit-1" src="{% static 'image/อุปกรณ์.jpg' %}" alt="Not Found">
+        <p class="competency-info">
+            1. ผู้เรียนสามารถบอกหน้าที่และส่วนประกอบของอุปกรณ์นิวเมติกส์ได้<br>
+            2. ผู้เรียนสามารถอธิบายหลักการทำงานของอุปกรณ์นิวเมติกส์ได้
+        </p>
+    </div>
+    <div class="competency-unit-2 competency-container-unit" id="competency-unit-2">
+        <h3 class="competency-title">หน่วยที่ 2 งานควบคุมแบบอัตโนมัติ</h3>
+        <img class="competency-unit-image unit-2" src="{% static 'image/auto.jpg' %}" alt="Not Found">
+        <p class="competency-info">
+            1. ผู้เรียนสามารถอ่านสัญลักษณ์วาล์วควบคุมทิศทาง3/2 แบบ Roller Trip ได้ <br>
+            2. ผู้เรียนสามารถอธิบายหลักการทำงานวาล์วควบคุมทิศทาง3/2 แบบ Roller Trip ได้
+        </p>
+    </div>
+
+    <div class="competency-unit-3 competency-container-unit" id="competency-unit-3">
+        <h3 class="competency-title">หน่วยที่ 3 วงจรนิวเมติกส์ไฟฟ้า</h3>
+        <img class="competency-unit-image unit-3" src="{% static 'image/ไฟฟ้า.jpg' %}" alt="Not Found">
+        <p class="competency-info">
+            1. ผู้เรียนสามารถอธิบายหลักการทำงานงานควบคุมโดยใช้ไฟฟ้าได้
+        </p>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" id="prev-button"
+        onclick="onClickPrevButton()" class="bi bi-caret-left-fill arrow-left" viewBox="0 0 16 16">
+        <path
+            d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" id="next-button"
+        onclick="onClickNextButton()" class="bi bi-caret-right-fill arrow-right" viewBox="0 0 16 16">
+        <path
+            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+    </svg>
+</div>
+
+<script>
+    const unit_1 = document.getElementById('competency-unit-1')
+    const unit_2 = document.getElementById('competency-unit-2')
+    const unit_3 = document.getElementById('competency-unit-3')
+    const prev_button = document.getElementById('prev-button')
+    const next_button = document.getElementById('next-button')
+    let competency_id = 0
+
+    const onClickNextButton = () => {
+        competency_id += 1
+
+        if (competency_id > 3) {
+            competency_id = 1
+            Competency_Card(competency_id)
+        }
+        Competency_Card(competency_id)
+    }
+
+    const onClickPrevButton = () => {
+        competency_id += -1 
+        if (competency_id < 0) {
+            competency_id = 2
+
+            Competency_Card(competency_id)
+        }
+        Competency_Card(competency_id)
+    }
+
+    const Competency_Card = (competency_check) => {
+        
+        if (competency_check % 3 === 0) {
+            unit_1.style.display = "flex"
+            unit_2.style.display = "none"
+            unit_3.style.display = "none"
+        } else if (competency_check % 3 === 1) {
+            unit_1.style.display = "none"
+            unit_2.style.display = "flex"
+            unit_3.style.display = "none"
+        } else if (competency_check % 3 === 2) {
+            unit_1.style.display = "none"
+            unit_2.style.display = "none"
+            unit_3.style.display = "flex"
+        }
+    }
+
+</script>
+{% endblock %}

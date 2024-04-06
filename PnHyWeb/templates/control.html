@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อุปกรณ์ควบคุมการทำงาน</title>
+    <link rel="stylesheet" href="{% static 'css/control.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        
+        <div class="nav">
+            <div class="logo">
+                <h1>Pnuematics</h1>
+            </div>
+            <ul>
+                <li class="บทเรียน"><a href="#">บทเรียน</a>
+                    <ul>
+                        <li><a href="#"><font size="2">หน่วยที่ 1 </font></a></li>
+                        <li><a href="#"><font size="2">หน่วยที่ 2 </font></a></li>
+                        <li><a href="#"><font size="2">หน่วยที่ 3 </font></a></li>
+                        
+                    </ul>
+                </li>
+                <li class="กิจกรรม"><a class="active" href="#">กิจกรรม</a></li>
+                <li class="แบทดสอบ"><a href="#">แบบทดสอบ</a>
+                    <ul>
+                        <li><a href="#"><font size="2">แบบทดสอบก่อนเรียน</font></a></li>
+                        <li><a href="#"><font size="2">แบบทดสอบหลังเรียน</font></a></li>
+                    </ul>
+                </li>
+                <li class="ออกจากระบบ"><a href="#">ออกจากระบบ</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="teams">
+        <div class="teams-items">
+            <h3><font size="10">อุปกรณ์ควบคุมการทำงาน </font></h3>
+        
+        </div>
+        <div class="content">
+            <h3 style="clear: right;"><font size="6">วาล์วบังคับทิศทางแบบ 3/2 </font></h3>
+            <img class = "img" src="{% static 'image/32.jpg' %}" alt="" width="350" height="400" >
+        </div> 
+        <div class="min">
+            <h4><font size="4">1. วาล์วแบบ 3/2 ปกติปิด บังคับการทำงานด้วยมือและกลับด้วยสปริง </font></h4>
+            <img src="{% static 'image/สัญลักษณ์ปุ่มกด.jpg' %}" alt="" width="300" height="250" >
+            <img src="{% static 'image/การทำงาน.jpg' %}" alt="" width="400" height="400" >
+            <h5><font size="4" >  การทำงาน</font></h5>
+            <p></p>ในตำแหน่งปกติลมจาก 3 จะถูกปิด รู 2 และ 1 จะต่อถึงกัน เมื่อออกแรงกดที่ปุ่มกดจะทำให้ลิ้นเปิด ลมจาก 3 ผ่านไป 2 ได้ และเมื่อปล่อยมือ สปริงจะดันให้วาล์วกลับสู่ตำแหน่งเดิม</font></p>
+        </div>
+        
+        <div class="main">
+        <h6><font size="4" >2. วาล์วแบบ 3/2 ปกติปิด บังคับการทำงานด้วยกลไกและกลับด้วยสปริง </font></h6>
+            <img src="{% static 'image/สัญลักษณ์สอง.jpg' %}" alt="" width="300" height="200" >
+            <img src="{% static 'image/การทำงานสอง.jpg' %}" alt="" width="400" height="400" >
+            <h5><font size="4" >  การทำงาน</font></h5>
+            <p>ในตำแหน่งปกติลมจาก 3 จะถูกปิด รู 2 และ 1 จะต่อถึงกัน เมื่อออกแรงกดจะทำให้ลิ้นเปิด ลมจาก 3 ผ่านไป 2 ได้ และเมื่อไม่มีแรงมากระทำ สปริงจะดันให้วาล์วกลับสู่ตำแหน่งเดิม</p>
+        </div>
+         <div class="concept">
+            <h5><font size="6">ถังเก็บลม (Receiver) </font></h5>
+            <p><font size="4">ถังเก็บลมจะทำหน้าที่เก็บสะสมลมที่ได้จากการอัดอากาศของเครื่องอัดลมให้มีปริมาณที่เพียงพอกับความต้องการ นอกจากนั้นยังเป็นตัวสร้างความดันให้กับลมอัดอีกด้วย จึงจำเป็นที่จะต้องมีถังเก็บลมที่สามารถจ่ายปริมาณลม และความดันลมได้อย่างคงที่ตลอดเวลา</font></p>
+            <h6><font size="6">การเตรียมลมอัด</font></h6>
+            <p><font size="4">โดยปกติแล้วในลมอัดจะมีความชื้นและไอน้ำปะปนอยู่ ซึ่งละอองน้ำจะมีผลทำให้อุปกรณ์ต่างๆ ของระบบนิวเมติกส์ เช่น ท่อทาง วาล์ว กระบอกสูบ ฯล เกิดการเสียหายได้ นอกจากนี้ในอากาศยังมีฝุ่นละออง และสิ่งสกปรกต่างๆ เมื่อคอมเพรสเซอร์ดูดอากาศที่มีฝุ่นละอองเข้ามาในนบบนิวเมติกส์ ซึ่งมีผลทำให้อุปกรณ์ที่เคลื่อนที่ ตลอดจนสิวกันรั่วต่างๆ มีอายุการใช้งานที่สั้นลง เป็นผลให้การทำงานของวงจรนิวเมติกส์ไม่สมบูรณ์ และไม่ปลอดภัยเท่าที่ควร ดังนั้น จึงมีความจำเป็นอย่างยิ่งที่จะต้องเตรียมลมอัดให้มีคุณสมบัติตามที่ต้องการก่อนที่จะนำไปใช้งานในงานนิวเมติกส์ ลมอัดที่จะนำมาใช้งานได้ต้องมีคุณสมบัติ คือ ต้องมีความสะอาดปราศจากฝุ่น สิ่งสกปรกต่างๆ และละอองน้ำ นอกจากนั้นยังต้องช่วยลดความฝืดในอุปกรณ์ที่มีการเคลื่อนที่ และป้องกันสนิม ดังนั้นลมอัดจึงจำเป็นต้องมีออกน้ำมันผสมอยู่ด้วย ด้วยสาเหตุนี้จึงต้องมีชุดควบคุมและปรับปรุงคุณภาพลมอัดก่อนที่จะนำลมอัดนี้ไปใช้งานในระบบนิวเมติกส์ต่อไป</font>
+        </div>
+
+
+
+
+    </section>
+
+
+
+    <footer>
+        <p><b><ins>Contact</b></ins><br>
+        <i>thawanphon.tt@mail.kmutt.ac.th</i><br>
+        <i>pornpimon.018@mail.kmutt.ac.th</i><br>
+        Faculty of Industrial Education and Technology Deparment of Mechanical Engineering, KMUTT.
+        </p>
+    </footer>
+
+</body>
+</html>

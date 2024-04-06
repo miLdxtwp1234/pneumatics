@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>Unit2</title>
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <div class="unit-big-container">
+        <section class="teams">
+            <div class="unit-title-container unit-container">
+                <h3 class="unit-title">
+                    หน่วยที่ 2 งานควบคุมอัตโนมัติ
+                </h3>
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h4 class="unit-sub-title">
+                    วาล์วควบคุมแบบลูกกลิ้ง (Roller)
+                </h4>
+                <div class="image-center">
+                    <img class="w400h200 " src="{% static 'image/Rollers.png' %}" alt="Not Found">
+                </div>
+
+                <p class="unit-details">
+                    การใช้วาล์วแบบลูกกลิ้ง ควบคุมการทำงานของก้านสูบโดยติดตั้งไว้ที่ปลายก้านสูบ
+                    เมื่อก้านสูบเคลื่อนที่มากดทำให้วาล์วสามารถทำงานได้
+                </p>
+                <table class="unit-table">
+                    <tr>
+                        <td>
+                            สัญลักษณ์
+                        </td>
+                        <td> <img class="w200h150" src="{% static 'image/สัญลักษณ์Roller.png' %}" alt="Not Found"> </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h4 class="unit-sub-title">
+                    วาล์วบังคับทิศทาง 3/2 แบบ Roller Trip
+                </h4>
+                <div class="image-center">
+                    <img class="w400h225" src="{% static 'image/Rollertrips.png' %}" alt="Not Found">
+                </div>
+                <table class="unit-table">
+                    <tr>
+                        <th class="unit-2-table-head">การทำงาน</th>
+                        <th class="unit-2-table-head">โครงสร้าง</th>
+                        <th class="unit-2-table-head">สัญลักษณ์</th>
+                    </tr>
+                    <td>
+                        <p class="unit-details">
+                            ในขณะที่การสูบเลื่อนออก วาล์วกลไกที่ปลายก้านสูบจะไปแตะวาล์ว 3/2 แบบ
+                            Roller Trip แต่วาล์วจะไม่ทำงาน
+                            ซึ่งวาล์วจะทำงานได้ทางเดียวในจังหวะที่ก้านสูบเคลื่อนที่กลับ ลมจากรู P จะผ่านไปที่รู
+                            A ได้
+                        </p>
+                    </td>
+
+                    <td class="unit-2-table-"> 
+                        <img class="w250h250" src="{% static 'image/การทำงานRollertrips.png' %}" alt="Not Found">
+                    </td>
+                    <td>
+                        <img class="w150h60" src="{% static 'image/สัญลักษณ์Rollertrips.png' %}" alt="Not Found">
+
+                    </td>
+                </table>
+
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h4 class="unit-sub-title">
+                    วงจรแบบก้านสูบเลื่อนเข้า-ออกโดยอัตโนมัติ
+                </h4>
+                <div class="image-center">
+                    <img class="w500h500" src="{% static 'image/เลื่อนเข้าออกอัตโนมัติ.jpg ' %}" alt="Not Found">
+                </div>
+
+                <h5 class="unit-details-head">
+                    หลักการทำงาน
+                </h5>
+                <p class="unit-details">
+                    ในขณะก่อนที่จะเริ่มทำงานจะต้องเปิดวาล์ว 0.1 เพื่อให้มีลมผ่านเข้าไปในวงจรเสียก่อน
+                    เมื่อกดวาล์ว 1.2 ลมจะผ่านวาล์ว 1.6 ไปดันให้วาล์ว 1.1 เปลี่ยนตำแหน่ง ลมจะผ่านไปดันให้ก้านสูบ <br>
+                    เลื่อนออก ในจังหวะที่กันสูบเลื่อนออกก็จะไปเตะวาล์ว 1.4 แต่ไม่มีผละไรเนื่องจากเป็นวาล์วกลไกแบบ
+                    Roller Trip ซึ่งจะทำงานได้ทางเดียวในจังหวะที่ก้านสูบเคลื่อนที่กลับ เมื่อก้านสูบเลื่อนออกไป <br>
+                    จนถึงปลายช่วงชัก จะไปกควาถั่ว 1.3 ทำให้ลมผ่านวาล์ว 1.3 ไปดันให้วาล์ว 1.1 เลื่อนกลับตำแหน่งเดิม
+                    ก้านสูบก็จะเลื่อนเข้า ในขณะที่ก้านสูบเลื่อนเข้าก่อนจะสุดช่วงชัก กลไกที่ก้านสูบจะไปกด <br>
+                    วาล์ว 1.4 ทำให้ก้านสูบเคลื่อนที่ออกอีกครั้งหนึ่ง การทำงานของถูกสูบก็จะวิ่งเข้า -
+                    ออกต่อเนื่องกันไปตลอดเวลาแบบอัดโนมัติ เมื่อต้องการหยุดการทำงานสามารถทำได้โดยปิดวาล์ว 0.1 <br>
+                    ทำให้ไม่มีลมจ่ายเข้าไปในวงจร
+                </p>
+            </div>
+
+            <div class="unit-sub-container unit-container">
+                <h4 class="unit-sub-title">
+                    หลักการเขียนโค้ดอุปกรณ์
+                </h4>
+                <div class="image-center">
+                    <img class="w640h500" src="{% static 'image/โค้ดอุปกรณ์.jpg ' %}" alt="Not Found">
+
+                </div>
+
+                <p class="unit-details">
+                    แถวที่ 1 สำหรับอุปกรณ์ทำงาน เช่น กระบอกสูบ โค้ดตัวเลขที่ใช้กับกระเอกสูบจะเริ่มต้น
+                    ด้วย 1.0 , 2.0 , 3.0 ขึ้นอยู่กับจำนวนของลูกสูบ <br>
+                    แถวที่ 2 สำหรับเมนวาล์ว (Main Valve) ที่ใช้กับลูกสูบแต่ละตัว เมนวาล์ว คือ
+                    วาล์วที่เปลี่ยนทิศทางลมเพื่อให้ก้านสูบเคลื่อนที่เข้า - ออก
+                    โค้ดตัวเลขที่ใช้กับเมนวาล์วจะเริ่มต้นด้วย 1.1 , 2.1 , 3.1 <br>
+                    เช่น กระบอกสูบ 1.0 ก็จะใช้เมนวาล์ว 1.1 กระบอกสูบ 2.0 ก็จะใช้เมนวาล์ว 2.1 <br>
+                    แถวที่ 3 สำหรับวาล์วควบคุมทิศทาง (Control Valve) คือ วาล์วที่ทำหน้าที่เปลี่ยนทิศทางลม
+                    เพื่อให้เมนวาล์วเปลี่ยนตำแหน่งกับวาล์วควบคุมทิศทาง <br>
+                    - วาล์วควบคุมทิศทางที่เป็นเลขคู่ เช่น โค้ด 1.2 , 1.4 มีผลกับการทำให้ก้านสูบ 1 เลื่อนออก <br>
+                    - วาล์วควบคุมทิศทางที่เป็นเลขคี่ เช่น โค้ด 1.3 มีผลกับการทำให้ก้านสูบ 1 เลื่อนเข้าและ โค้ด 2.3
+                    มีผลทำให้ก้านสูบ 2 เลื่อนเข้า <br>
+                    ส่วนวาล์วอื่น ๆ เช่น วาล์ว 1.5 และ 2.5 เป็นวาล์วซึ่งมีผลทำให้ก้านสูบเคลื่อนที่เข้าช้า
+                    ดังนั้นจึงใช้โค้ดวาล์วที่เป็นเลขคี่ ส่วนวาล์ว 1.8 เป็นวาล์วซึ่งมีผลกับการเคลื่อนที่ออกของก้านสูบ
+                    คือ <br>
+                    ทำให้ก้านสูบ 1 เคลื่อนที่ออกช้าจึงใช้โค้ดวาล์วเป็นเลขคู่
+                    แถวที่ 4 อุปกรณ์อื่น ๆ ที่ไม่ได้มีผลกับอุปกรณ์ตัวใดตัวหนึ่งแต่จะมีผลกับทั้งวงจร เช่น
+                    ชุดปรับปรุงคุณภาพลม (Service Unit) โค้ดตัวเลขที่ใช้ คือ 0.1 , 0.2 และ 0.3
+                </p>
+            </div>
+            <div class="unit-sub-container unit-container">
+                <div class="image-center">
+                    <video class="unit-video" controls>
+                        <source src="{% static 'image/อัตโนมัติ.mp4' %}" type="video/mp4">
+                    </video>
+                </div>
+
+
+            </div>
+    </div>
+</body>
+
+{% endblock %}

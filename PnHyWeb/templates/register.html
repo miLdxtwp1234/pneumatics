@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/> 
+    <meta name="keywords" content="register, Pneumatics, registration">
+    <meta name="description" content="Register for Pneumatics - Sign up for an account on our platform.">
+    <title>Register for Pneumatics | Pneumatics Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="register-container">
+        <div class="error_message" id="error">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-info-lg"
+                viewBox="0 0 16 16">
+                <path
+                    d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0" />
+            </svg>
+        </div>
+        <div class="form-container">
+            <h1><b>Register</b></h1>
+            {% csrf_token %}
+            <form action="register_post" method="post">
+                <div class="form-group">
+                    <label for="student_id">Student ID</label>
+                    <input type="text" class="form-control" name="student_id" aria-label="student_id">
+                </div>
+                <div class="form-group">
+                    <label for="first_name">Firstname</label>
+                    <input type="text" class="form-control" name="first_name" aria-label="first_name">
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Lastname</label>
+                    <input type="text" class="form-control" name="last_name" aria-label="last_name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" name="email" aria-label="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control input-password" name="password" id="password" aria-label="password">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                        class="bi bi-eye-fill eye" viewBox="0 0 16 16" id="open-eye" onclick="hide_password()">
+                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                        <path
+                            d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                        class="bi bi-eye-slash-fill eye show-password" viewBox="0 0 16 16" id="close-eye"
+                        onclick="show_password()">
+                        <path
+                            d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7 7 0 0 0 2.79-.588M5.21 3.088A7 7 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474z" />
+                        <path
+                            d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12z" />
+                    </svg>
+                </div>
+                <div class="form-group">
+                    <label for="confirm_passeord">Confirm password</label>
+                    <input type="password" class="form-control" name="confirm_password" id="confirmed-password" aria-label="confirm_password">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                        class="bi bi-eye-fill eye confirm" viewBox="0 0 16 16" id="open-eye-confirm"
+                        onclick="hide_confirm_password()">
+                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                        <path
+                            d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                        class="bi bi-eye-slash-fill eye confirm show-password" viewBox="0 0 16 16"
+                        id="close-eye-confirm" onclick="show_confirm_password()">
+                        <path
+                            d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7 7 0 0 0 2.79-.588M5.21 3.088A7 7 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474z" />
+                        <path
+                            d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12z" />
+                    </svg>
+                </div>
+                <button class="btn btn-primary w-100 btn-submit">Submit</button>
+            </form>
+
+            <p>Already have an account? Click for <a href="{% url 'login' %}">login.</a></p>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+
+
+
+    function hide_password() {
+        const open_eye = document.getElementById('open-eye')
+        const close_eye = document.getElementById('close-eye')
+        document.getElementById('password').type = 'password';
+        open_eye.classList.remove('show-password')
+        close_eye.classList.add('show-password')
+    }
+
+    function hide_confirm_password() {
+        const open_eye = document.getElementById('open-eye-confirm')
+        const close_eye = document.getElementById('close-eye-confirm')
+        document.getElementById('confirmed-password').type = 'password';
+        open_eye.classList.remove('show-password')
+        close_eye.classList.add('show-password')
+    }
+
+    function show_password() {
+        const open_eye = document.getElementById('open-eye')
+        const close_eye = document.getElementById('close-eye')
+        document.getElementById('password').type = 'text';
+        open_eye.classList.add('show-password')
+        close_eye.classList.remove('show-password')
+    }
+
+    function show_confirm_password() {
+        const open_eye = document.getElementById('open-eye-confirm')
+        const close_eye = document.getElementById('close-eye-confirm')
+        document.getElementById('confirmed-password').type = 'text';
+        open_eye.classList.add('show-password')
+        close_eye.classList.remove('show-password')
+    }
+
+    document.addEventListener("click", function (e) {
+        const error_message = document.getElementById("error")
+        if (e.target !== error_message) {
+            error_message.style.display = "none";
+        }
+    })
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    const csrftoken = getCookie('csrftoken');
+</script>
+
+{% if error_message %}
+<script>
+    const error_message = document.getElementById('error');
+    error_message.innerHTML += "{{error_message}}";
+    error_message.style.display = "flex";
+</script>
+{% endif %}
+
+{% if success_message %}
+<script>
+    alert("{{success_message}}")
+    localStorage.setItem('token', '{{ token }}');
+    window.location.href = "{% url 'home' %}";
+</script>
+{% endif %}

@@ -1,0 +1,228 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5'
+        name='viewport' />
+    <meta name="description" content="Homepage Pneumatics">
+    <title>Homepage</title>
+    <link rel="preload" href="{% static 'css/homepage.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{% static 'css/homepage.css' %}"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <video poster="" playinline autoplay muted loop id="background-video">
+        <source src="{% static 'image/videohomepage.mp4' %}" type="video/mp4">
+    </video>
+
+    <div class="drawer-container" id="drawer-container">
+        <div class="drawer-profile">
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="onClickCloseDrawer()" id="drawer-close" width="32"
+                height="32" fill="currentColor" class="bi bi-x-lg x-icon" viewBox="0 0 16 16">
+                <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+            </svg>
+            <div class="drawer-profile-text">
+                <div class="line-1 profile-text">Hello,</div>
+                <div class="line-2 profile-text" id="userFullName">
+                    <div class="login profile-link" onclick="onClickLogin()">
+                        Login
+                    </div>
+                    <div class="center-text profile-link">or</div>
+                    <div class="register profile-link" onclick="onClickRegister()">
+                        Sign up
+                    </div>
+                </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                class="bi bi-person-circle profile-icon" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+            </svg>
+        </div>
+
+        <div class="drawer-link">
+            <div class="drawer-homepage">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-house-door-fill drawer-link-icon" viewBox="0 0 16 16">
+                    <path
+                        d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
+                </svg>
+                หน้าหลัก - Home
+            </div>
+            <div class="drawer-unit" onclick="OnLinkCompetency()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-book-fill drawer-link-icon" viewBox="0 0 16 16">
+                    <path
+                        d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
+                </svg>
+                จุดประสงค์ - Competency
+            </div>
+            <div class="drawer-activity" onclick="OnLinkWorksheet()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-activity drawer-link-icon" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2" />
+                </svg>
+                กิจกรรม - Activity
+            </div>
+            <div class="drawer-test" onclick="OnLinkPretest()">
+                <img src="../static/image/quiz.png" alt="" class="test-icon drawer-link-icon">
+                แบบทดสอบ - Quiz
+            </div>
+            <div class="drawer-signup" onclick="postLogout()" id="drawer-signup">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-door-open drawer-link-icon" viewBox="0 0 16 16">
+                    <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1" />
+                    <path
+                        d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117M11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5M4 1.934V15h6V1.077z" />
+                </svg>
+                ออกจากระบบ - Sign Out
+            </div>
+        </div>
+
+    </div>
+    <div class="nav-container">
+        <div class="title-text">
+            Pneumatics
+        </div>
+        <div class="nav-link">
+            <a href="#">บทเรียน</a>
+            <a href="#">กิจกรรม</a>
+            <a href="#">แบบทดสอบ</a>
+            <a onclick="postLogout()" id="Sign-Out" class="sign-out"></a>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-list menu-icon"
+            id="open-drawer" onclick="onClickOpenDrawer()" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+        </svg>
+    </div>
+
+    <div class="welcome-container">
+        <div class="welcome-line-1 welcome-text">
+            Welcome to Pneumatics ...
+        </div>
+        <div class="welcome-line-2 welcome-text" id="username-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill"
+                viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg>
+            <div class="welcome-name" id="userFullName-desktop" onclick="onClickCompetency()">
+                <div class="welcome-login welcome-text-container" id="login" onclick="onClickLogin()">
+                    Login
+                </div>
+                <div class="welcome-center-text welcome-text-container">or</div>
+                <div class="welcome-register welcome-text-container" id="Sign-up" onclick="onClickRegister()">
+                    Sign up
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+
+        const OnLinkCompetency = () => {
+            window.location.href = "{% url 'competency' %}"
+        }
+        
+        const OnLinkWorksheet = () => {
+            window.location.href = "{% url 'worksheet' %}"
+        }
+
+        const OnLinkPretest = () => {
+            window.location.href = "{% url 'pretest' %}"
+        }
+
+        const handleResize = () => {
+            let windowWidth = window.innerWidth;
+            const drawer_container = document.getElementById('drawer-container');
+
+            if (windowWidth > 425) {
+                drawer_container.style.display = "none";
+
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        const onClickCompetency = () => {
+            const login = document.getElementById('login')
+            const SignUp = document.getElementById('Sign-up')
+            document.addEventListener("click", function(e){
+                if (e.target === login){
+                    window.location.href = "{% url 'login' %}"
+                    return
+                }
+                if (e.target === SignUp){
+                    window.location.href = "{% url 'register' %}"
+                    return
+                }
+                window.location.href = "{% url 'competency' %}"
+            })
+        }
+
+
+        const onClickCloseDrawer = () => {
+            const drawer_container = document.getElementById('drawer-container')
+            drawer_container.style.display = 'none'
+        }
+
+        const onClickOpenDrawer = () => {
+            const drawer_container = document.getElementById('drawer-container')
+            drawer_container.style.animation = 'SlideIn .25s'
+            drawer_container.style.display = 'block'
+        }
+
+        const onClickRegister = () => {
+            window.location.href = "{% url 'register' %}";
+        }
+
+        const onClickLogin = () => {
+            window.location.href = "{% url 'login' %}";
+        }
+
+        const token = localStorage.getItem('token');
+        const sign_out = document.getElementById('Sign-Out')
+        const drawer_sign_out = document.getElementById('drawer-signup')
+        if (token) {
+            window.onload = function () {
+                fetchData();
+            };
+            sign_out.innerText = 'ออกจากระบบ'
+            drawer_sign_out.style.display = 'flex'
+        } else {
+            sign_out.innerText = ''
+            drawer_sign_out.style.display = 'none'
+        }
+
+        // ดึงชื่อของผู้ใช้งาน
+        async function fetchData() {
+            $.post('/getUser', { token: token }, function (data) {
+                const user = data;
+                document.getElementById('userFullName').innerText = user.first_name + ' ' + user.last_name;
+                document.getElementById('userFullName-desktop').innerText = user.first_name + ' ' + user.last_name
+            });
+        }
+
+        const postLogout = () => {
+            if (token) {
+                $.post('/postLogout', { token: token })
+                localStorage.removeItem('token', null)
+                window.location.href = "{% url 'home' %}";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

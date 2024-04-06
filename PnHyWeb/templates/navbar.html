@@ -1,0 +1,144 @@
+{% load static %}
+{% extends "navbar.html" %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <title>pretest</title>
+</head>
+
+<body>
+
+    <div class="navbar-container d-flex flex-row justify-content-between align-items-center">
+        <div class="navbar-logo d-flex mw-100 align-items-center" >
+            Pnuematics
+        </div>
+        <div class="narbar-link-container">
+            <div class="narbar-link" id="navbar-link-unit" onmouseenter="onMouseHover()">บทเรียน</div>
+            <div class="narbar-link">กิจกรรม</div>
+            <div class="narbar-link">แบบทดสอบ</div>
+            <div class="narbar-link">ออกจากระบบ</div>
+            <div class="navbar-link-unit" id="navbar-link-unit-container" onmouseenter="onMouseHover()"
+                onmouseleave="onMouseLeave()">
+                <div class="navbar-unit">หน่วยที่ 1</div>
+                <div class="navbar-unit">หน่วยที่ 2</div>
+                <div class="navbar-unit">หน่วยที่ 3</div>
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-list menu-icon"
+            id="open-drawer" onclick="OpenDrawer()" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+        </svg>
+    </div>
+    <div class="drawer-container" id="drawer-container">
+        <div class="drawer-header sub-drawer">
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="CloseDrawer()" id="drawer-close" width="32" height="32"
+                fill="currentColor" class="bi bi-x-lg x-icon drawer-icon" viewBox="0 0 16 16">
+                <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+            </svg>
+            <div class="profile-container">
+                <div class="profile-line1 profile fw-bold">Hello,</div>
+                <div class="profile-line2 profile fw-bolder" id="usernameFull"></div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                class="bi bi-person-circle drawer-profile-icon" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+            </svg>
+        </div>
+        <div class="drawer-unit sub-drawer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                class="bi bi-book-fill drawer-icon" viewBox="0 0 16 16">
+                <path
+                    d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
+            </svg>
+            บทเรียน - Unit
+        </div>
+        <div class="drawer-activity sub-drawer"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                fill="currentColor" class="bi bi-activity drawer-icon" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2" />
+            </svg>
+            กิจกรรม - Activity
+        </div>
+        <div class="drawer-test sub-drawer"><img src="../static/image/quiz.png" alt="" class="test-icon drawer-icon">
+            แบบทดสอบ - Test
+        </div>
+        <div class="drawer-exit sub-drawer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                class="bi bi-door-open drawer-icon" viewBox="0 0 16 16">
+                <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1" />
+                <path
+                    d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117M11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5M4 1.934V15h6V1.077z" />
+            </svg>
+            ออกจากระบบ - Sign Out
+        </div>
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    const handleResize = () => {
+        let windowWidth = window.innerWidth;
+        const drawer_container = document.getElementById('drawer-container');
+
+        if (windowWidth > 575) {
+            drawer_container.style.display = "none";
+        }
+    };
+
+    window.addEventListener("resize", handleResize);
+    const CloseDrawer = () => {
+        const drawer_container = document.getElementById('drawer-container')
+        drawer_container.style.display = "none"
+    }
+
+    document.addEventListener("click", function (e) {
+        const navbar_link_unit = document.getElementById('navbar-link-unit')
+        const unit_container = document.getElementById('navbar-link-unit-container')
+        if (e.target !== navbar_link_unit && e.target !== unit_container) {
+            unit_container.style.display = "none"
+        }
+    })
+
+    const OpenDrawer = () => {
+        const drawer_container = document.getElementById('drawer-container')
+        drawer_container.style.animation = "SlideIn .25s"
+        drawer_container.style.display = "flex"
+    }
+
+    const token = localStorage.getItem('token')
+    if (!token) {
+        window.location.href = "{% url 'login' %}";
+    }
+    window.onload = function () {
+        $.post('/getUser', { token: token }, function (data) {
+            const user = data
+            document.getElementById('usernameFull').innerText = user.first_name + ' ' + user.last_name
+
+        })
+    }
+
+    const onMouseHover = () => {
+        const unit_container = document.getElementById('navbar-link-unit-container')
+        unit_container.style.display = "block"
+    }
+
+    const onMouseLeave = () => {
+        const unit_container = document.getElementById('navbar-link-unit-container')
+        unit_container.style.display = "none"
+    }
+
+
+</script>
+
+</html>

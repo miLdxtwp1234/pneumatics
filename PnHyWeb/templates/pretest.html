@@ -1,0 +1,419 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <title>pretest</title>
+</head>
+
+<body id="body">
+  {%block content%}
+  <link rel="stylesheet" href="{% static 'css/pretest.css' %}">
+  
+  <div class="title-pretest">
+    แบบทดสอบก่อนเรียน
+  </div>
+  <div class="question-container">
+    <div class="question active" id="question1">
+      <h2>1. นิวเมติกส์มีความหมายตรงกับข้อใด</h2>
+      <div class="choice-container">
+        <input type="radio" name="q1" value="ก"> ก.
+        ระบบที่ใช้อากาศอัดส่งไปตามท่อลมเพื่อถ่ายทอดกำลังของไหลให้เป็นกำลังงานกล
+      </div>
+      <div class="choice-container">
+        <input type="radio" name="q1" value="ข"> ข.
+        ระบบที่ใช้น้ำควบคุมเพื่อเป็นตัวกลางในการทำงาน
+      </div>
+      <div class="choice-container">
+        <input type="radio" name="q1" value="ค"> ค.
+        ระบบที่ควบคุมโดยน้ำมันเพื่อเหมาะสมสำหรับงานที่ใช้แรงดันสูงๆ
+      </div>
+      <div class="choice-container">
+        <input type="radio" name="q1" value="ง"> ง. ระบบที่นำเอาไฟฟ้าเข้ามาช่วยในการทำงาน
+      </div>
+      <div class="choice-container">
+        <input type="radio" name="q1" value="จ"> จ. ระบบที่นำเอาไฟฟ้าเข้ามาช่วยในการทำงาน
+      </div>
+      <button class="btn btn-primary" onclick="nextQuestion('question1', 'question2', 1)">ถัดไป</button>
+    </div>
+    <div class="question" id="question2">
+      <h2>2. ชุดควบคุมและปรับปรุงคุณภาพลมประกอบด้วยอะไรบ้าง</h2>
+      <div class="choice-container"><input type="radio" name="q2" value="ก"> ก. ตัวกรอง วาล์วปรับลดและควบคุมแรงดัน
+        ถังเก็บลม</div>
+      <div class="choice-container"><input type="radio" name="q2" value="ข"> ข. ตัวกรอง ชุดตัวจ่ายน้ำมันหล่อลื่น
+        ชุดควบคุมเครื่องอัดลม</div>
+      <div class="choice-container"><input type="radio" name="q2" value="ค"> ค. ตัวกรอง ถังเก็บลม ตัวจ่ายน้ำมันหล่อลื่น
+      </div>
+      <div class="choice-container"><input type="radio" name="q2" value="ง"> ง. ตัวกรอง ชุดควบคุมเครื่องอัดลม
+        วาล์วปรับลดและควบคุมแรงดัน</div>
+      <div class="choice-container"><input type="radio" name="q2" value="จ"> จ. ตัวกรอง วาล์วปรับลดและควบคุมแรงดัน
+        ตัวจ่ายน้ำมันหล่อลื่น</div>
+      <button class="btn btn-primary" onclick="nextQuestion('question2', 'question3', 2)">ถัดไป</button>
+    </div>
+    <div class="question" id="question3">
+      <h2>3. อุปกรณ์การทำงานที่มีการเคลื่อนที่แบบแนวเส้นตรงมีกระบอกสูบชนิดอะไรบ้าง</h2>
+      <div class="choice-container"><input type="radio" name="q3" value="ก"> ก. กระบอกสูบทางเดียว</div>
+      <div class="choice-container"><input type="radio" name="q3" value="ข"> ข. กระบอกสูบสองทาง</div>
+      <div class="choice-container"><input type="radio" name="q3" value="ค"> ค. กระบอกสูบหมุน</div>
+      <div class="choice-container"><input type="radio" name="q3" value="ง"> ง. กระบอกสูบทางเดียว กระบอกสูบหมุน</div>
+      <div class="choice-container"><input type="radio" name="q3" value="จ"> จ. กระบอกสูบทางเดียว กระบอกสูบสองทาง</div>
+      <button class="btn btn-primary" onclick="nextQuestion('question3', 'question4', 3)">ถัดไป</button>
+    </div>
+    <div class="question" id="question4">
+      <h2>4. วาล์วกันกลับมีหน้าที่อะไร</h2>
+      <div class="choice-container"><input type="radio" name="q4" value="ก"> ก.
+        บังคับให้การไหลเป็นไปในทิศทางเดียวไหลย้อนกลับได้</div>
+      <div class="choice-container"><input type="radio" name="q4" value="ข"> ข.
+        บังคับให้การไหลเป็นไปในทิศทางเดียวไม่ไหลย้อนกลับ</div>
+      <div class="choice-container"><input type="radio" name="q4" value="ค"> ค.
+        บังคับให้การไหลสามารถเคลื่อนตัวได้เร็วขึ้น</div>
+      <div class="choice-container"><input type="radio" name="q4" value="ง"> ง. บังคับให้การไหลสามารถเคลื่อนตัวได้ช้าลง
+      </div>
+      <div class="choice-container"><input type="radio" name="q4" value="จ"> จ.
+        บังคับไม่ให้การไหลสามารถเคลื่อนตัวผ่านไปได้</div>
+      <button class="btn btn-primary" onclick="nextQuestion('question4', 'question5', 4)">ถัดไป</button>
+    </div>
+    <div class="question " id="question5">
+      <h2>5. จากรูปคือสัญลักษณ์ใด</h2>
+      <img class="test-image" src="{% static 'image/พรีเทส4.jpg' %}" alt="">
+      <div class="choice-container"><input type="radio" name="q5" value="ก"> ก. ปุ่มกด</div>
+      <div class="choice-container"><input type="radio" name="q5" value="ข"> ข. ลักษณะโดยทั่วไป</div>
+      <div class="choice-container"><input type="radio" name="q5" value="ค"> ค. คันโยกใช้มือดึง บิด หรือหมุน</div>
+      <div class="choice-container"><input type="radio" name="q5" value="ง"> ง. ใช้มือดึง หรือดันมีร่องล็อค</div>
+      <div class="choice-container"><input type="radio" name="q5" value="จ"> จ. ใช้เท้าเยียบ</div>
+      <button class="btn btn-primary" onclick="nextQuestion('question5', 'question6',5)">ถัดไป</button>
+    </div>
+    <div class="question " id="question6">
+      <h2>6. ข้อใดกล่าวถึงการติดตั้งวาล์ว 3/2 แบบ Roller Trip ได้ถูกต้อง</h2>
+      <div class="choice-container"><input type="radio" name="q6" value="ก"> ก. ติดตั้งไม่ให้ก้านสูบกดทับ</div>
+      <div class="choice-container"><input type="radio" name="q6" value="ข"> ข. ติดตั้งบริเวณปลายก้านสูบ</div>
+      <div class="choice-container"><input type="radio" name="q6" value="ค"> ค. ติดตั้งให้เกิดการชนและกดทับของก้านสูบ
+      </div>
+      <div class="choice-container"><input type="radio" name="q6" value="ง"> ง. การติดตั้งต้องกำหนดตำแหน่งและทิศทาง
+      </div>
+      <div class="choice-container"><input type="radio" name="q6" value="จ"> จ. การติดตั้งไม่ต้องกำหนดตำแหน่งและทิศทาง
+      </div>
+      <button class="btn btn-primary" onclick="nextQuestion('question6', 'question7',6)">ถัดไป</button>
+    </div>
+    <div class="question question-image" id="question7">
+      <h2>7. ข้อใดเป็นการควบคุมระบบนิวเมติกส์แบบอัตโนมัติ</h2>
+      <div class="question-image-column cloumn-1">
+        <div class="choice-container-image"><input type="radio" name="q7" value="ก">ก.<img
+            src="{% static 'image/พรีเทส7ก.jpg' %}" alt="" class="choice-image"></div>
+        <div class="choice-container-image"><input type="radio" name="q7" value="ข">ข.<img
+            src="{% static 'image/พรีเทส7ข.jpg' %}" alt="" class="choice-image"></div>
+        <div class="choice-container-image"><input type="radio" name="q7" value="ค">ค.<img
+            src="{% static 'image/พรีเทส7ค.jpg' %}" alt="" class="choice-image"></div>
+        <div class="choice-container-image"><input type="radio" name="q7" value="ง">ง.<img
+            src="{% static 'image/พรีเทส7ง.jpg' %}" alt="" class="choice-image"></div>
+        <div class="choice-container-image"><input type="radio" name="q7" value="จ">จ.<img
+            src="{% static 'image/พรีเทส7จ.jpg' %}" alt="" class="choice-image"></div>
+      </div>
+
+      <button class="btn btn-primary" onclick="nextQuestion('question7', 'question8', 7)">ถัดไป</button>
+    </div>
+    <div class="question" id="question8">
+      <h2>8. การกำหนดโค้ดของวาล์วควบคุมเป็นเลขคู่ จะทำให้ลูกสูบมีลักษณะการเคลื่อนที่อย่างไร</h2>
+      <div class="choice-container"><input type="radio" name="q8" value="ก"> ก. เลื่อนออก</div>
+      <div class="choice-container"><input type="radio" name="q8" value="ข"> ข. เลื่อนเข้า</div>
+      <div class="choice-container"><input type="radio" name="q8" value="ค"> ค. อยู่กับที่</div>
+      <div class="choice-container"><input type="radio" name="q8" value="ง"> ง. เลื่อนไปมา</div>
+      <div class="choice-container"><input type="radio" name="q8" value="จ"> จ. เลื่อนออกและกลับเข้ามาทันที</div>
+      <button class="btn btn-primary" onclick="nextQuestion('question8', 'question9', 8)">ถัดไป</button>
+    </div>
+    <div class="question" id="question9">
+      <h2>9. เมื่อต้องการควบคุมให้ก้านสูบเลื่อนออก สามารถควบคุมที่หมายเลขใด</h2>
+      <div class="question-row">
+        <div class="question-exam">
+          <img class="test-image-q9" src="{% static 'image/พรีเทส9.jpg'%}" alt="" id="zoom-image">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-zoom-in icon-zoom" id="zoom-icon" viewBox="0 0 16 16" onclick="onZoom()">
+            <path fill-rule="evenodd"
+              d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+            <path
+              d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+            <path fill-rule="evenodd"
+              d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+          </svg>
+        </div>
+        <div class="question-column q9">
+          <div class="choice-container-image q9"><input type="radio" name="q9" value="ก"> ก. 6</div>
+          <div class="choice-container-image q9"><input type="radio" name="q9" value="ข"> ข. 7</div>
+          <div class="choice-container-image q9"><input type="radio" name="q9" value="ค"> ค. 8</div>
+          <div class="choice-container-image q9"><input type="radio" name="q9" value="ง"> ง. 6 และ 7</div>
+          <div class="choice-container-image q9"><input type="radio" name="q9" value="จ"> จ. 6 หรือ 7</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="nextQuestion('question9', 'question10', 9)">ถัดไป</button>
+    </div>
+    <div class="question " id="question10">
+      <h2>10. จากรูป โค้ด 1.1 ต้องแทนที่อักษรใด</h2>
+      <div class="question-row">
+        <div class="question-exam">
+          <img class="test-image-q9" src="{% static 'image/พรีเทส10.jpg' %}" alt="" id="zoom-image-q10">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-zoom-in icon-zoom" id="zoom-icon-q10" viewBox="0 0 16 16" onclick="onZoomQ10()">
+            <path fill-rule="evenodd"
+              d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+            <path
+              d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+            <path fill-rule="evenodd"
+              d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+          </svg>
+        </div>
+        <div class="question-column q10">
+          <div class="choice-container-image q10"><input type="radio" name="q10" value="ก"> ก.A</div>
+          <div class="choice-container-image q10"><input type="radio" name="q10" value="ข"> ข.I</div>
+          <div class="choice-container-image q10"><input type="radio" name="q10" value="ค"> ค.E</div>
+          <div class="choice-container-image q10"><input type="radio" name="q10" value="ง"> ง.H</div>
+          <div class="choice-container-image q10"><input type="radio" name="q10" value="จ"> จ.G</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="nextQuestion('question10', 'question11', 10)">ถัดไป</button>
+    </div>
+    <div class="question" id="question11">
+      <h2>11. โซลินอยด์วาล์ว เป็นวาล์วที่ทำงานโดยอาศัยหลักการของสิ่งใด</h2>
+      <div class="choice-container"><input type="radio" name="q11" value="ก"> ก. แม่เหล็กไฟฟ้า</div>
+      <div class="choice-container"><input type="radio" name="q11" value="ข"> ข. เฟือง</div>
+      <div class="choice-container"><input type="radio" name="q11" value="ค"> ค. สวิตช์</div>
+      <div class="choice-container"><input type="radio" name="q11" value="ง"> ง. มอเตอร์</div>
+      <div class="choice-container"><input type="radio" name="q11" value="จ"> จ. สปริง</div>
+      <button class="btn btn-primary" onclick="nextQuestion('question11', 'question12', 11)">ถัดไป</button>
+    </div>
+    <div class="question " id="question12">
+      <h2>12. อุปกรณ์ Y1.2 คืออุปกรณ์ข้อใด</h2>
+      <div class="question-row">
+        <div class="question-exam">
+          <img class="test-image-q9" src="{% static 'image/ข้อสอบ12-13.jpg' %}" alt="" id="zoom-image-q12">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-zoom-in icon-zoom" id="zoom-icon-q12" viewBox="0 0 16 16" onclick="onZoomQ12()">
+            <path fill-rule="evenodd"
+              d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+            <path
+              d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+            <path fill-rule="evenodd"
+              d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+          </svg>
+        </div>
+        <div class="question-column q12">
+          <div class="choice-container-image q12"><input type="radio" name="q12" value="ก"> ก. Pushbutton switch</div>
+          <div class="choice-container-image q12"><input type="radio" name="q12" value="ข"> ข. Toggle switch</div>
+          <div class="choice-container-image q12"><input type="radio" name="q12" value="ค"> ค. Contactor</div>
+          <div class="choice-container-image q12"><input type="radio" name="q12" value="ง"> ง. Solenoid</div>
+          <div class="choice-container-image q12"><input type="radio" name="q12" value="จ"> จ. Limit switch</div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" onclick="nextQuestion('question12', 'question13', 12)">ถัดไป</button>
+    </div>
+    <div class="question" id="question13">
+      <h2>13. อุปกรณ์ S1.4 คืออุปกรณ์ข้อใด </h2>
+
+      <div class="question-row">
+        <div class="question-exam">
+          <img class="test-image-q9" src="{% static 'image/ข้อสอบ12-13.jpg '%}" alt="" id="zoom-image-q13">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-zoom-in icon-zoom" id="zoom-icon-q13" viewBox="0 0 16 16" onclick="onZoomQ13()">
+            <path fill-rule="evenodd"
+              d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+            <path
+              d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z" />
+            <path fill-rule="evenodd"
+              d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5" />
+          </svg>
+        </div>
+      </div>
+      <div class="question-column q13">
+        <div class="choice-container-image q13"><input type="radio" name="q13" value="ก"> ก. Pushbutton switch</div>
+        <div class="choice-container-image q13"><input type="radio" name="q13" value="ข"> ข. Toggle switch</div>
+        <div class="choice-container-image q13"><input type="radio" name="q13" value="ค"> ค. Contactor</div>
+        <div class="choice-container-image q13"><input type="radio" name="q13" value="ง"> ง. Solenoid</div>
+        <div class="choice-container-image q13"><input type="radio" name="q13" value="จ"> จ. Limit switch </div>
+      </div>
+      <button class="btn btn-primary" onclick="nextQuestion('question13', 'question14', 13)">ถัดไป</button>
+    </div>
+    <div class="question" id="question14">
+      <h2>14. อุปกรณ์ที่ใช้ในการหน่วงเวลา คืออุปกรณ์ข้อใด</h2>
+      <div class="choice-container"><input type="radio" name="q14" value="ก"> ก. Toggle switch</div>
+      <div class="choice-container"><input type="radio" name="q14" value="ข"> ข. Contactor</div>
+      <div class="choice-container"><input type="radio" name="q14" value="ค"> ค. Soleonoid</div>
+      <div class="choice-container"><input type="radio" name="q14" value="ง"> ง. Counter Relay</div>
+      <div class="choice-container"><input type="radio" name="q14" value="จ"> จ. Timer Relay</div>
+      <button class="btn btn-primary" onclick="nextQuestion('question14', 'question15',14)">ถัดไป</button>
+    </div>
+    <div class="question" id="question15">
+      <h2>15. อุปกรณ์ที่ใช้ในการนับจำนวน คืออุปกรณ์ข้อใด</h2>
+      <div class="choice-container"><input type="radio" name="q15" value="ก"> ก. Toggle switch</div>
+      <div class="choice-container"><input type="radio" name="q15" value="ข"> ข. Contactor</div>
+      <div class="choice-container"><input type="radio" name="q15" value="ค"> ค. Soleonoid</div>
+      <div class="choice-container"><input type="radio" name="q15" value="ง"> ง. Counter Relay</div>
+      <div class="choice-container"><input type="radio" name="q15" value="จ"> จ. Timer Relay</div>
+      <button id="btn-submit" class="btn btn-primary" onclick="nextQuestion('question15', '',15)">Submit</button>
+    </div>
+  </div>
+
+
+  <div id="result" class="result" style="display: none;">
+    <h2>คะแนนที่ได้: <span id="score"></span></h2>
+    <div class="line"></div>
+  </div>
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  const onZoomQ10 = () => {
+    const zoom_q10 = document.getElementById('zoom-image-q10')
+    const zoom_icon_q10 = document.getElementById('zoom-icon-q10')
+    zoom_q10.classList.add("zoom")
+    zoom_icon_q10.style.display = "none"
+  }
+
+  const onZoomQ12 = () => {
+    const zoom_q12 = document.getElementById('zoom-image-q12')
+    const zoom_icon_q12 = document.getElementById('zoom-icon-q12')
+    zoom_q12.classList.add("zoom")
+    zoom_icon_q12.style.display = "none"
+  }
+
+  const onZoomQ13 = () => {
+    const zoom_q13 = document.getElementById('zoom-image-q13')
+    const zoom_icon_q13 = document.getElementById('zoom-icon-q13')
+    zoom_q13.classList.add("zoom")
+    zoom_icon_q13.style.display = "none"
+  }
+
+  const onZoom = () => {
+    const backgroud = document.getElementById('root')
+    const zoom = document.getElementById('zoom-image')
+    const zoom_icon = document.getElementById('zoom-icon')
+    zoom.classList.add("zoom")
+    zoom_icon.style.display = "none"
+  }
+
+  document.addEventListener("click", function (e) {
+    const zoom = document.getElementById('zoom-image')
+    const zoom_icon = document.getElementById('zoom-icon')
+    const zoom_q10 = document.getElementById('zoom-image-q10')
+    const zoom_icon_q10 = document.getElementById('zoom-icon-q10')
+    const zoom_q12 = document.getElementById('zoom-image-q12')
+    const zoom_icon_q12 = document.getElementById('zoom-icon-q12')
+    const zoom_q13 = document.getElementById('zoom-image-q13')
+    const zoom_icon_q13 = document.getElementById('zoom-icon-q13')
+    if (e.target !== zoom && e.target !== zoom_icon || e.target === zoom) {
+      zoom.classList.remove("zoom")
+      zoom_icon.style.display = "flex"
+    }
+    if (e.target !== zoom_q10 && e.target !== zoom_icon_q10 || e.target === zoom_q10) {
+      zoom_q10.classList.remove("zoom")
+      zoom_icon_q10.style.display = "flex"
+    }
+    if (e.target !== zoom_q12 && e.target !== zoom_icon_q12 || e.target === zoom_q12) {
+      zoom_q12.classList.remove("zoom")
+      zoom_icon_q12.style.display = "flex"
+    }
+    if (e.target !== zoom_q13 && e.target !== zoom_icon_q13 || e.target === zoom_q13) {
+      zoom_q13.classList.remove("zoom")
+      zoom_icon_q13.style.display = "flex"
+    }
+  })
+
+  const token_send = localStorage.getItem('token')
+  if (!token_send) {
+    window.location.href = "{% url 'home' %}"
+  }
+  let score = 0;
+  let score_text = document.getElementById("score").innerText;
+  function nextQuestion(currentQuestionId, nextQuestionId, questionNumber) {
+    const result_container = document.getElementById('result')
+    const score_text = document.getElementById('score')
+    const currentQuestion = document.getElementById(currentQuestionId);
+    const selectedAnswer = currentQuestion.querySelector('input[type="radio"]:checked');
+    if (selectedAnswer == null) {
+      alert("select your answer");
+      return;
+    }
+    if (questionNumber == 15) {
+      checkAnswer(currentQuestion, questionNumber);
+      score_text.innerHTML = score
+      result_container.style.display = "flex"
+      postScorePretest();
+      return;
+    } else if (questionNumber <= 14) {
+      const currentQuestion = document.getElementById(currentQuestionId);
+      const nextQuestion = document.getElementById(nextQuestionId);
+      checkAnswer(currentQuestion, questionNumber);
+      currentQuestion.classList.remove('active');
+      nextQuestion.classList.add('active');
+    }
+  }
+
+  function postScorePretest() {
+    $.post('/pretestPost', { token: token_send, pretest: score }, function (data) {
+      alert('save score')
+      const btn_submit = document.getElementById('btn-submit')
+      btn_submit.setAttribute('disabled', 'disabled')
+    })
+  }
+
+  function checkAnswer(currentQuestion, questionNumber) {
+    const selectedAnswer = currentQuestion.querySelector('input[type="radio"]:checked');
+    if (selectedAnswer) {
+      const correctAnswer = getCorrectAnswer(parseInt(questionNumber)); // หาคำตอบที่ถูกต้อง
+      if (score >= 15) {
+        return;
+      }
+      if (selectedAnswer.value === correctAnswer) {
+        score += 1; // เพิ่มคะแนนเมื่อตอบถูก
+      }
+    }
+  }
+
+  function getCorrectAnswer(questionNumber) {
+    switch (questionNumber) {
+      case 1:
+        return 'ก';
+      case 2:
+        return 'จ';
+      case 3:
+        return 'จ';
+      case 4:
+        return 'ข';
+      case 5:
+        return 'จ';
+      case 6:
+        return 'ข';
+      case 7:
+        return 'ข';
+      case 8:
+        return 'ก';
+      case 9:
+        return 'จ';
+      case 10:
+        return 'ง';
+      case 11:
+        return 'ก';
+      case 12:
+        return 'ง';
+      case 13:
+        return 'ข';
+      case 14:
+        return 'จ';
+      case 15:
+        return 'ง';
+      default:
+        return '';
+    }
+  }
+
+</script>
+
+</html>
+{% endblock %}
